@@ -1,0 +1,146 @@
+:root {
+    --primary: #14b8a6;
+    --primary-hover: #0d9488;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    --bg-light: #f0fdfa;
+    --bg-dark: #ffffff;
+    --text-dark: #1f2937;
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.card {
+    background-color: var(--bg-dark);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+h2 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input[type="text"], input[type="date"], input[type="time"], select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.appointment-list {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.appointment-item {
+    background-color: #e0f2f7;
+    border-left: 5px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-item:hover {
+    background-color: #ccfbf1;
+}
+
+.appointment-info {
+    flex-grow: 1;
+}
+
+.appointment-info h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.appointment-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+.delete-btn {
+    background-color: var(--danger);
+    padding: 0.5rem 0.8rem;
+    margin-top: 0;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+    background-color: var(--danger-hover);
+}
